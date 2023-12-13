@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRSALabApp", "CryptoRSALabApp\CryptoRSALabApp.csproj", "{5455FD22-3B29-4521-AB41-2B20EE8DF7EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5455FD22-3B29-4521-AB41-2B20EE8DF7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5455FD22-3B29-4521-AB41-2B20EE8DF7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5455FD22-3B29-4521-AB41-2B20EE8DF7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5455FD22-3B29-4521-AB41-2B20EE8DF7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F2787BF-3FC7-4761-8ABF-E47A50DE73F1}
+	EndGlobalSection
+EndGlobal
