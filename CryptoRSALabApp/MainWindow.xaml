@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="80"><Run Language="ru-ru" Text="Собеседник 1"/></TextBlock>
+        <Separator HorizontalAlignment="Center" VerticalAlignment="Top" Height="51" Width="394" RenderTransformOrigin="0.5,0.5" Margin="0,213,0,0">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <TextBlock HorizontalAlignment="Left" Margin="582,8,0,0" TextWrapping="Wrap" Text="Собеседник 2" VerticalAlignment="Top"/>
+        <TextBox Name="firstPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Открытый ключ"/></TextBlock>
+        <TextBox Name="firstPrivateKeyTextBox" HorizontalAlignment="Left" Margin="191,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Закрытый клю"/><Run Language="ru-ru" Text="ч"/></TextBlock>
+        <TextBox Name="firstCompanionPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="107"><Run Language="ru-ru" Text="Открытый ключ собеседника 2"/></TextBlock>
+        <TextBox Name="firstSourceMessageTextBox" HorizontalAlignment="Left" Margin="173,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" Height="34"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Исходное сообщение"/></TextBlock>
+        <TextBox Name="firstEncyptedMessageTextBox" HorizontalAlignment="Left" Margin="173,299,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" Height="34"/>
+        <Button Name="keysGeneratingButton" Content="Сгенерировать ключи" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" Height="25" Width="132"/>
 
     </Grid>
 </Window>
