@@ -27,7 +27,7 @@ namespace CryptoRSALabApp
             int candidate = random.Next(1024, size);
 
             while (!IsPrime(candidate))
-                candidate = random.Next(100, 200);
+                candidate = random.Next(1024, size);
 
             return candidate;
         }
