@@ -19,37 +19,37 @@
             </Separator.RenderTransform>
         </Separator>
         <TextBlock HorizontalAlignment="Left" Margin="582,8,0,0" TextWrapping="Wrap" Text="Собеседник 2" VerticalAlignment="Top"/>
-        <TextBox Name="firstPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491"/>
+        <TextBox Name="firstPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491" TextChanged="firstPublicKeyTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Открытый ключ"/></TextBlock>
         <TextBox Name="firstPrivateKeyTextBox" HorizontalAlignment="Left" Margin="191,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="32,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Закрытый клю"/><Run Language="ru-ru" Text="ч"/></TextBlock>
-        <TextBox Name="firstCompanionPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="firstCompanionPublicKeyTextBox" HorizontalAlignment="Left" Margin="191,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="firstCompanionPublicKeyTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="107"><Run Language="ru-ru" Text="Открытый ключ собеседника 2"/></TextBlock>
-        <TextBox Name="firstSourceMessageTextBox" HorizontalAlignment="Left" Margin="179,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
+        <TextBox Name="firstSourceMessageTextBox" HorizontalAlignment="Left" Margin="179,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="firstSourceMessageTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="11,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Исходное сообщение"/></TextBlock>
-        <TextBox Name="firstEncyptedMessageTextBox" HorizontalAlignment="Left" Margin="179,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
+        <TextBox Name="firstEncryptedMessageTextBox" HorizontalAlignment="Left" Margin="179,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="firstEncryptedMessageTextBox_TextChanged"/>
         <Button Name="firstKeysGeneratingButton" Content="Сгенерировать ключи" HorizontalAlignment="Left" Margin="32,136,0,0" VerticalAlignment="Top" Height="25" Width="132" Click="firstKeysGeneratingButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="11,218,0,0" TextWrapping="Wrap" Text="Зашифрованное сообщение" VerticalAlignment="Top"/>
         <TextBox Name="firstReceivedEncryptedMessageTextBox" HorizontalAlignment="Left" Margin="179,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="firstReceivedEncryptedMessageTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="11,311,0,0" TextWrapping="Wrap" Text="Зашифрованное сообщение" VerticalAlignment="Top"/>
-        <TextBox Name="firstReceivedDecryptedMessageTextBox" HorizontalAlignment="Left" Margin="179,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
+        <TextBox Name="firstReceivedDecryptedMessageTextBox" HorizontalAlignment="Left" Margin="179,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="firstReceivedDecryptedMessageTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="11,350,0,0" TextWrapping="Wrap" Text="Расшифрованное сообщение" VerticalAlignment="Top"/>
         <Button Name="firstEncryptAndSendButton" Content="Зашифровать и отправить" HorizontalAlignment="Left" Margin="31,248,0,0" VerticalAlignment="Top" Width="160" Height="24" Click="firstEncryptAndSendButton_Click"/>
         <Button Name="firstReceiveAndDecryptButton" Content="Получить и расшифровать" HorizontalAlignment="Left" Margin="32,385,0,0" VerticalAlignment="Top" Width="159" Height="23" Click="firstReceiveAndDecryptButton_Click"/>
-        <TextBox Name="secondPublicKeyTextBox" HorizontalAlignment="Left" Margin="645,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491"/>
-        <TextBox Name="secondPrivateKeyTextBox" HorizontalAlignment="Left" Margin="645,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491"/>
-        <TextBox Name="secondCompanionPublicKeyTextBox" HorizontalAlignment="Left" Margin="645,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491"/>
+        <TextBox Name="secondPublicKeyTextBox" HorizontalAlignment="Left" Margin="645,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491" TextChanged="secondPublicKeyTextBox_TextChanged"/>
+        <TextBox Name="secondPrivateKeyTextBox" HorizontalAlignment="Left" Margin="645,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491" TextChanged="secondPrivateKeyTextBox_TextChanged"/>
+        <TextBox Name="secondCompanionPublicKeyTextBox" HorizontalAlignment="Left" Margin="645,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.491" TextChanged="secondCompanionPublicKeyTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="461,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Открытый ключ"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="461,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Закрытый клю"/><Run Language="ru-ru" Text="ч"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="461,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="107"><Run Language="ru-ru" Text="Открытый ключ собеседника 2"/></TextBlock>
         <Button Name="secondKeysGeneratingButton" Content="Сгенерировать ключи" HorizontalAlignment="Left" Margin="461,136,0,0" VerticalAlignment="Top" Height="25" Width="132" Click="secondKeysGeneratingButton_Click"/>
-        <TextBox Name="secondSourceMessageTextBox" HorizontalAlignment="Left" Margin="582,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
-        <TextBox Name="secondEncryptedMessageTextBox" HorizontalAlignment="Left" Margin="582,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
+        <TextBox Name="secondSourceMessageTextBox" HorizontalAlignment="Left" Margin="582,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="secondSourceMessageTextBox_TextChanged"/>
+        <TextBox Name="secondEncryptedMessageTextBox" HorizontalAlignment="Left" Margin="582,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="secondEncryptedMessageTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="411,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Исходное сообщение"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="411,218,0,0" TextWrapping="Wrap" Text="Зашифрованное сообщение" VerticalAlignment="Top"/>
         <Button Name="secondEncryptAndSendButton" Content="Зашифровать и отправить" HorizontalAlignment="Left" Margin="425,248,0,0" VerticalAlignment="Top" Width="160" Height="24" Click="secondEncryptAndSendButton_Click"/>
         <TextBox Name="secondReceivedEncryptedMessageTextBox" HorizontalAlignment="Left" Margin="582,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="firstReceivedEncryptedMessageTextBox_TextChanged"/>
-        <TextBox Name="secondReceivedDecryptedMessageTextBox" HorizontalAlignment="Left" Margin="582,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34"/>
+        <TextBox Name="secondReceivedDecryptedMessageTextBox" HorizontalAlignment="Left" Margin="582,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="34" TextChanged="secondReceivedDecryptedMessageTextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="411,311,0,0" TextWrapping="Wrap" Text="Зашифрованное сообщение" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="411,350,0,0" TextWrapping="Wrap" Text="Расшифрованное сообщение" VerticalAlignment="Top"/>
         <Button Name="secondReceiveAndDecryptButton" Content="Получить и расшифровать" HorizontalAlignment="Left" Margin="435,385,0,0" VerticalAlignment="Top" Width="159" Height="23" Click="secondReceiveAndDecryptButton_Click"/>

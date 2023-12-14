@@ -42,20 +42,105 @@ namespace CryptoRSALabApp
 
         private void firstReceiveAndDecryptButton_Click(object sender, RoutedEventArgs e)
         {
+            firstReceivedEncryptedMessageTextBox.Text = secondEncryptedMessageTextBox.Text;
+            var encryptedMessage = firstReceivedEncryptedMessageTextBox.Text;
 
+            var decryptedMessage = _textEncryptor.Decrypt(encryptedMessage, _firstKeyPair.PrivateKey.Item1, _firstKeyPair.PrivateKey.Item2);
+
+            firstReceivedDecryptedMessageTextBox.Text = decryptedMessage;
         }
 
         private void firstEncryptAndSendButton_Click(object sender, RoutedEventArgs e)
         {
+            var message = firstSourceMessageTextBox.Text;
 
+            var encrypted = _textEncryptor.Encrypt(message, _secondKeyPair.PublicKey.Item1, _secondKeyPair.PublicKey.Item2);
+
+            firstEncryptedMessageTextBox.Text = encrypted;
         }
 
         private void secondEncryptAndSendButton_Click(object sender, RoutedEventArgs e)
         {
+            var message = secondSourceMessageTextBox.Text;
 
+            var encrypted = _textEncryptor.Encrypt(message, _firstKeyPair.PublicKey.Item1, _firstKeyPair.PublicKey.Item2);
+
+            secondEncryptedMessageTextBox.Text = encrypted;
         }
 
         private void secondReceiveAndDecryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            secondReceivedEncryptedMessageTextBox.Text = firstEncryptedMessageTextBox.Text;
+            var encryptedMessage = secondReceivedEncryptedMessageTextBox.Text;
+
+            var decryptedMessage = _textEncryptor.Decrypt(encryptedMessage, _secondKeyPair.PrivateKey.Item1, _secondKeyPair.PrivateKey.Item2);
+
+            secondReceivedDecryptedMessageTextBox.Text = decryptedMessage;
+        }
+
+        // Методы-заглушки, нужны, т.к. элементы интерфейса требуют реакции на их изменения
+        // В данном случае никакой реакции не нужно
+        private void firstPublicKeyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstCompanionPublicKeyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondPublicKeyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondPrivateKeyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondCompanionPublicKeyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstSourceMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstEncryptedMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondSourceMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondEncryptedMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstReceivedEncryptedMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstReceivedDecryptedMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void secondReceivedDecryptedMessageTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
         }
