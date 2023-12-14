@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
 namespace CryptoRSALabApp
 {
@@ -13,8 +8,10 @@ namespace CryptoRSALabApp
         {
             var p = GeneratePrimeNumber(4096);
             var q = GeneratePrimeNumber(4096);
+            
             var n = p * q;
             var phi = (p - 1) * (q - 1);
+            
             var e = GeneratePublicKey(phi);
             var d = GeneratePrivateKey(e, phi);
 
@@ -30,9 +27,7 @@ namespace CryptoRSALabApp
             int candidate = random.Next(1024, size);
 
             while (!IsPrime(candidate))
-            {
                 candidate = random.Next(100, 200);
-            }
 
             return candidate;
         }
