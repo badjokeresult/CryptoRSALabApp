@@ -42,6 +42,11 @@ namespace CryptoRSALabApp
             if (number < 2)
                 return false;
 
+            return IsPrimeBySimpleDivs(number) && IsPrimeByErathosphene(number);
+        }
+
+        private bool IsPrimeBySimpleDivs(int number)
+        {
             for (var i = 2; i <= Math.Sqrt(number); i++)
             {
                 if (number % i == 0)
@@ -49,6 +54,25 @@ namespace CryptoRSALabApp
             }
 
             return true;
+        }
+
+        private bool IsPrimeByErathosphene(int number)
+        {
+            var numbersPrimarityStatuses = new bool[number + 1];
+            Array.Fill(numbersPrimarityStatuses, true);
+
+            for (var i = 2; i * i <= number; i++)
+            {
+                if (numbersPrimarityStatuses[i])
+                {
+                    for (var j = i * i; j <= number; j += i)
+                    {
+                        numbersPrimarityStatuses[j] = false;
+                    }
+                }
+            }
+
+            return numbersPrimarityStatuses[number];
         }
 
         private BigInteger GeneratePublicKey(BigInteger phi)
