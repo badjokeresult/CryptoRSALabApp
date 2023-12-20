@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace CryptoRSALabApp
+﻿namespace CryptoRSALabApp
 {
     public class RSAKeyGenerator
     {
@@ -74,9 +72,7 @@ namespace CryptoRSALabApp
 
         private long GeneratePublicKey(long phi)
         {
-            var random = new Random();
             long e;
-
             do
             {
                 e = random.Next(2, (int)phi);

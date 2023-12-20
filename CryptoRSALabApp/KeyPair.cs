@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace CryptoRSALabApp
+﻿namespace CryptoRSALabApp
 {
     public class KeyPair
     {

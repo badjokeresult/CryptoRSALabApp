@@ -1,12 +1,10 @@
-﻿using System;
-using System.Numerics;
-using System.Text;
+﻿using System.Text;
 
 namespace CryptoRSALabApp
 {
     public class RSATextEncryptor
     {
-        private static long ModPow(long baseValue, long exponent, long modulus)
+        private long ModPow(long baseValue, long exponent, long modulus)
         {
             long result = 1;
             while (exponent > 0)
@@ -57,5 +55,4 @@ namespace CryptoRSALabApp
             return Encoding.UTF8.GetString(decryptedBytes);
         }
     }
-
 }
