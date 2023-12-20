@@ -1,62 +1,61 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using System.Text;
 
 namespace CryptoRSALabApp
 {
     public class RSATextEncryptor
     {
-        public string Encrypt(string message, BigInteger e, BigInteger n)
+        private static long ModPow(long baseValue, long exponent, long modulus)
         {
-            var bytes = Encoding.Unicode.GetBytes(message);
-            var encrypted = new BigInteger[bytes.Length / 2];
-
-            for (var i = 0; i < bytes.Length; i += 2)
+            long result = 1;
+            while (exponent > 0)
             {
-                var value = BitConverter.ToUInt16(bytes, i);
-                encrypted[i / 2] = BigInteger.ModPow(value, e, n);
+                if (exponent % 2 == 1)
+                {
+                    result = (result * baseValue) % modulus;
+                }
+                exponent >>= 1;
+                baseValue = (baseValue * baseValue) % modulus;
             }
-
-            return ConvertToString(encrypted);
-        }
-
-        private string ConvertToString(BigInteger[] encrypted)
-        {
-            var sb = new StringBuilder();
-            foreach (var cipher in encrypted)
-            {
-                sb.Append((char)(ushort)cipher);
-            }
-            return sb.ToString();
-        }
-
-        public string Decrypt(string encrypted, BigInteger d, BigInteger n)
-        {
-            var encryptedArray = ConvertToBigIntegerArray(encrypted);
-
-            var decryptedBytes = new byte[encryptedArray.Length * 2];
-
-            for (var i = 0; i < encryptedArray.Length; i++)
-            {
-                var decryptedValue = (ushort)BigInteger.ModPow(encryptedArray[i], d, n);
-                var decryptedBytesSegment = BitConverter.GetBytes(decryptedValue);
-                Array.Copy(decryptedBytesSegment, 0, decryptedBytes, i * 2, 2);
-            }
-
-            return Encoding.Unicode.GetString(decryptedBytes);
-        }
-
-        private BigInteger[] ConvertToBigIntegerArray(string decrypted)
-        {
-            var bytes = Encoding.Unicode.GetBytes(decrypted);
-            var result = new BigInteger[bytes.Length / 2];
-
-            for (var i = 0; i <  bytes.Length; i += 2)
-            {
-                var val = BitConverter.ToUInt16(bytes, i);
-                result[i / 2] = val;
-            }
-
             return result;
         }
+
+        public string Encrypt(string message, long e, long n)
+        {
+            var bytes = Encoding.UTF8.GetBytes(message);
+            var encryptedValues = new long[bytes.Length];
+
+            for (var i = 0; i < bytes.Length; i++)
+            {
+                int value = bytes[i];
+                encryptedValues[i] = ModPow(value, e, n);
+            }
+
+            var base64String = Convert.ToBase64String(BitConverter.GetBytes(encryptedValues.Length)
+                .Concat(encryptedValues.SelectMany(BitConverter.GetBytes))
+                .ToArray());
+            return base64String;
+        }
+
+        public string Decrypt(string encrypted, long d, long n)
+        {
+            var encryptedBytes = Convert.FromBase64String(encrypted);
+            var length = BitConverter.ToInt32(encryptedBytes, 0);
+            var encryptedValues = new long[length];
+
+            Buffer.BlockCopy(encryptedBytes, sizeof(int), encryptedValues, 0, encryptedBytes.Length - sizeof(int));
+
+            var decryptedBytes = new byte[encryptedValues.Length];
+
+            for (var i = 0; i < decryptedBytes.Length; i++)
+            {
+                int decryptedValue = (int)ModPow(encryptedValues[i], d, n);
+                decryptedBytes[i] = (byte)decryptedValue;
+            }
+
+            return Encoding.UTF8.GetString(decryptedBytes);
+        }
     }
+
 }

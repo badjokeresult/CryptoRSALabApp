@@ -4,16 +4,16 @@ namespace CryptoRSALabApp
 {
     public class KeyPair
     {
-        private readonly (BigInteger, BigInteger) _privateKey;
-        private readonly (BigInteger, BigInteger) _publicKey;
+        private readonly (long, long) _privateKey;
+        private readonly (long, long) _publicKey;
 
-        public KeyPair((BigInteger, BigInteger) privateKey, (BigInteger, BigInteger) publicKey)
+        public KeyPair((long, long) privateKey, (long, long) publicKey)
         {
             _privateKey = privateKey;
             _publicKey = publicKey;
         }
 
-        public (BigInteger, BigInteger) PrivateKey { get { return _privateKey; } }
-        public (BigInteger, BigInteger) PublicKey { get {  return _publicKey; } }
+        public (long, long) PrivateKey { get { return _privateKey; } }
+        public (long, long) PublicKey { get {  return _publicKey; } }
     }
 }
